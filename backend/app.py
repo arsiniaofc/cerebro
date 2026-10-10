@@ -26,6 +26,7 @@ def create_fastapi_app():
         return None
 
     app = FastAPI(title="Cérebro Virtual", version="1.0.0")
+    app.mount("/", StaticFiles(directory="dist", html=True), name="static")
 
     app.add_middleware(
         CORSMiddleware,
@@ -118,6 +119,9 @@ def run_server(host: str = "127.0.0.1", port: int = 8000):
         import socketserver
 
         class FallbackHandler(http.server.SimpleHTTPRequestHandler):
+            def __init__(self, *args, **kwargs):
+                super().__init__(*args, directory="dist", **kwargs)
+
             def do_GET(self):
                 if self.path == "/api/state":
                     self.send_response(200)
