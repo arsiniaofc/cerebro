@@ -26,7 +26,23 @@ def create_fastapi_app():
         return None
 
     app = FastAPI(title="Cérebro Virtual", version="1.0.0")
-    app.mount("/", StaticFiles(directory="dist", html=True), name="static")
+    
+    # Verifica se a pasta dist existe antes de tentar servir
+    if os.path.exists("dist"):
+        app.mount("/", StaticFiles(directory="dist", html=True), name="static")
+    else:
+        @app.get("/")
+        async def root():
+            return HTMLResponse(content="""
+                <html>
+                    <body style='font-family: sans-serif; padding: 20px; color: #333;'>
+                        <h1>Erro: Interface não encontrada</h1>
+                        <p>A pasta <code>dist/</code> não foi encontrada na raiz do projeto.</p>
+                        <p>Esta pasta é necessária para exibir a interface do Cérebro Virtual. Certifique-se de que você baixou a versão completa do projeto com os arquivos compilados.</p>
+                    </body>
+                </html>
+            """)
+
 
     app.add_middleware(
         CORSMiddleware,
