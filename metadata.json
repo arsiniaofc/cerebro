@@ -1,0 +1,6 @@
+{
+  "name": "Cérebro Virtual",
+  "description": "Agente multimodal experimental com aprendizado contínuo, dinâmica neuroquímica e neurovisualização em tempo real.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

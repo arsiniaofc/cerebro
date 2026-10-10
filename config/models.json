@@ -1,0 +1,40 @@
+{
+  "adapters": {
+    "vision_core": {
+      "type": "lightweight_heuristics_and_patches",
+      "status": "ready_local",
+      "model_name": "SpatialGridEncoder_v1",
+      "device": "CPU",
+      "memory_mb": 15,
+      "requires_gpu": false,
+      "description": "Extrator leve de representações espaciais e detecção de bordas sem rede neural pesada."
+    },
+    "ocr_engine": {
+      "type": "tesseract_or_pattern_match",
+      "status": "available_if_installed",
+      "model_name": "TesseractOCR_Optional",
+      "device": "CPU",
+      "memory_mb": 45,
+      "requires_gpu": false,
+      "description": "Reconhecimento ótico de caracteres modular para telas e caixas de texto."
+    },
+    "audio_spectral": {
+      "type": "fft_energy_spectral",
+      "status": "ready_local",
+      "model_name": "AcousticSpectrogramAnalyzer",
+      "device": "CPU",
+      "memory_mb": 12,
+      "requires_gpu": false,
+      "description": "Decomposição espectral de frequências e eventos acústicos em tempo real."
+    },
+    "language_intent": {
+      "type": "rule_and_intent_parser",
+      "status": "ready_local",
+      "model_name": "CognitiveIntentMatcher",
+      "device": "CPU",
+      "memory_mb": 8,
+      "requires_gpu": false,
+      "description": "Parser semântico local de objetivos e comandos sem dependência de LLM remoto."
+    }
+  }
+}

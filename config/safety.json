@@ -1,0 +1,29 @@
+{
+  "active_mode": "observation",
+  "allowed_modes": [
+    "observation",
+    "simulation",
+    "controlled_environment",
+    "authorized_computer"
+  ],
+  "emergency_stop_triggered": false,
+  "action_limits": {
+    "max_consecutive_actions": 50,
+    "cooldown_between_clicks_ms": 150,
+    "require_confirmation_for_file_modifications": true,
+    "require_confirmation_for_external_network": true
+  },
+  "allowed_applications_whitelist": [
+    "virtual_brain_sim",
+    "notepad.exe",
+    "mspaint.exe",
+    "calculator.exe"
+  ],
+  "blocked_operations": [
+    "delete_file",
+    "format_disk",
+    "registry_write",
+    "download_unauthorized_executable",
+    "terminal_root_execution"
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "app_name": "Cérebro Virtual",
+  "version": "1.0.0",
+  "mode": "observation",
+  "tick_interval_ms": 100,
+  "discount_factor_gamma": 0.95,
+  "learning_rate_alpha": 0.1,
+  "exploration_epsilon": 0.2,
+  "storage": {
+    "db_path": "data/brain.db",
+    "checkpoints_dir": "experiments/checkpoints",
+    "sessions_dir": "datasets/sessions",
+    "media_dir": "datasets/media"
+  },
+  "neurochemistry": {
+    "dopamine_baseline": 0.35,
+    "noradrenaline_baseline": 0.30,
+    "serotonin_baseline": 0.50,
+    "acetylcholine_baseline": 0.40,
+    "glutamate_baseline": 0.45,
+    "gaba_baseline": 0.45,
+    "cortisol_baseline": 0.20,
+    "melatonin_baseline": 0.15
+  }
+}
